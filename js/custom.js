@@ -1,1 +1,1 @@
-$("h1").css("border","10px solid green");
+$("h1").css("border","10px solid red");

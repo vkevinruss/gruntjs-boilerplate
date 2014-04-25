@@ -13,7 +13,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'build/js/myscript.js': ['js/libs/jquery.js','js/libs/*.js','js/*.js']
+          'build/js/main.js': ['js/libs/*.js','js/*.js']
         }
       }
     },
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'build/css/global.min.css': 'scss/global.scss'
+          'scss/global.min.css': 'scss/global.scss'
         }
       }
     },
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     autoprefixer: {
       dist: {
         files: {
-          'build/css/global.min.auto.css': 'build/css/global.min.css'
+          'build/css/main.css': 'scss/global.min.css'
         }
       }
     },
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
     }
   });
 
-  // Load the plugin that provides the "uglify" task.
+  //----- Load the plugins that provide the tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
@@ -106,7 +106,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-includes');
   grunt.loadNpmTasks('grunt-contrib-copy');
 
-  // Default task(s).
-  grunt.registerTask('default', ['jshint','uglify','sass','autoprefixer','imagemin','includes','copy']);
+  //----- Default task(s).
+  grunt.registerTask('default', ['jshint','uglify','sass','autoprefixer','watch','imagemin','includes','copy']);
 
 };
